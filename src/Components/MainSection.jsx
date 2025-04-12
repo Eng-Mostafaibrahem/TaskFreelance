@@ -1,21 +1,9 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import HeaderMainSection from "./HeaderMainSection";
-import axios from "axios";
 
-export default function MainSection({ title }) {
-  const [data, setData] = useState([]);
-
-  async function getProduct() {
-    const data = await axios.get("https://fakestoreapi.com/products");
-    console.log(data.data);
-    setData(data.data);
-    return data;
-  }
-
-  useEffect(() => {
-    getProduct();
-  }, []);
+export default function MainSection({ title,data }) {
+ 
 
   return (
     <div className="mt-5  ">
